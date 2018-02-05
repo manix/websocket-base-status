@@ -1,0 +1,22 @@
+{
+  "name": "websocket-base-status",
+  "version": "1.0.0",
+  "description": "Provides a http service to monitor a websocket-base server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manix/websocket-base-status.git"
+  },
+  "author": "Manix <admin@manix.info>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/manix/websocket-base-status/issues"
+  },
+  "homepage": "https://github.com/manix/websocket-base-status#readme",
+  "dependencies": {
+    "circular-json": "^0.5.1"
+  }
+}
