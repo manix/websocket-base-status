@@ -20,4 +20,4 @@ or with express
       http: app
     })
 
-Keep in mind that it's probably a good idea to implement some security feature, you most likely don't want anyone to be able to access this page.
+Keep in mind that it's probably a good idea to implement some security middleware, you most likely don't want anyone to be able to access this page.
