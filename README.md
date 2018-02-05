@@ -19,3 +19,5 @@ or with express
     base.run({
       http: app
     })
+
+Keep in mind that it's probably a good idea to implement some security feature, you most likely don't want anyone to be able to access this page.
