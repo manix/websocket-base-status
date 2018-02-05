@@ -7,7 +7,7 @@ Enables you to monitor your websocket-base server through HTTP.
     let base = require("websocket-base");
 
     base.run({
-      http: require("websocket-base-status")
+      http: require("websocket-base-status")(base)
     });
 
     // now you can access the status page at /
