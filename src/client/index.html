@@ -2,24 +2,69 @@
 <html>
   <head>
     <title>Websocket Base Server Status</title>
-    <link rel="stylesheet" href="?route=file&file=style.css"/>
+    <link rel="stylesheet" href="?route=style&file=style.css" type="text/css"/>
     <script src="?route=file&file=index.js"></script>
-    <script src="?route=file&file=formatter.js"></script>
   </head>
   <body>
-    <h1>Websocket Base Server Status</h1>
-    <p id="date"></p>
+    <section class="header">
+      <h3>Websocket Base Server Status</h3>
+      <div>
+        <span>Now</span>
+        <span>Uptime</span>
+      </div>
+      <div>
+        <span id="date"></span>
+        <span id="uptime"></span>
+      </div>
+    </section>
 
-    <div>
-      Connections: <span id="connections"></span>
+    <div class="group">
+      <section class="processor">
+        <h3>Processor</h3>
+        <div>
+          <span>User</span>
+          <span>System</span>
+        </div>
+        <div>
+          <span id="cpu-user"></span>
+          <span id="cpu-system"></span>
+        </div>
+      </section>
+  
+      <section class="memory">
+        <h3>Memory</h3>
+        <div>
+          <span>RSS</span>
+          <span>Total</span>
+          <span>Used</span>
+          <span>External</span>
+        </div>
+        <div>
+          <span id="mem-rss"></span>
+          <span id="mem-heapTotal"></span>
+          <span id="mem-heapUsed"></span>
+          <span id="mem-external"></span>
+        </div>
+      </section>
     </div>
 
-    <div>
-      Users: <span id="users"></span>
-    </div>
+    <section class="users">
+      <h3>Users</h3>
+      <div>
+        <span>Total</span>
+        <span>Connections</span>
+      </div>
+      <div>
+        <span id="users-total"></span>
+        <span id="users-connections"></span>
+      </div>
+    </section>
 
-    <hr/>
+    <section class="list">
+      <h3>List</h3>
+      <div id="table">
 
-    <div id="table"></div>
+      </div>
+    </section>
   </body>
 </html>

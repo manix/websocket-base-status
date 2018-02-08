@@ -1,0 +1,124 @@
+@import "./reset.scss";
+
+$colors-bg: (
+  header: #FF851B,
+  processor: #2ECC40,
+  memory: #B10DC9,
+  users: #0074D9,
+  list: #DDDDDD
+);
+$colors-text: (
+  header: white,
+  processor: white,
+  memory: white,
+  users: white,
+  list: black
+);
+
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  > section {
+    flex: 1;
+  }
+}
+
+section {
+  > h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 115%;
+    padding: 20px 0;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    &:first-of-type {
+      font-weight: bold;
+    }
+
+    > span {
+      flex: 1;
+    }
+  }
+
+  @each $class, $color in $colors-bg {
+    &.#{$class} {
+      color: map-get($colors-text, $class);
+      background-color: $color;
+
+      > div {
+        background-color: darken($color, 5%);
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  &:after {
+    content: "...";
+    display: block;
+    padding: 5px;
+  }
+
+  > tr {
+    display: none;
+
+    &:first-child {
+      display: table-row;
+      cursor: pointer;
+    }
+
+    > td {
+      padding: 10px;
+      text-align: left;
+      border: solid 1px gray;
+    
+      &:first-child {
+        width: 1%;
+        font-weight: bold;
+        text-align: right;
+      }
+  
+      &:last-child {
+        background-color: #f1f1f1;
+        font-weight: normal;
+      }
+
+      > table {
+        border: none;
+      }
+    }
+  }
+
+  &.expanded {
+    &:after {
+      display: none;
+    }
+
+    > tr {
+      display: table-row;
+    }
+  }
+
+  &.array {
+    > tr > td {
+      padding: 0;
+      border: none;
+    }
+  }
+}
