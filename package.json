@@ -1,6 +1,6 @@
 {
   "name": "websocket-base-status",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides a http service to monitor a websocket-base server.",
   "main": "index.js",
   "scripts": {

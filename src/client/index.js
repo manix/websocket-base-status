@@ -44,7 +44,9 @@ const construct = function (data) {
 window.onload = function () {
   document.getElementById("date").innerHTML = new Date().toLocaleString();
 
-  fetch("?route=stats").then(response => response.json()).then(json => {
+  fetch("?route=stats", {
+    credentials: "same-origin"
+  }).then(response => response.json()).then(json => {
     document.getElementById("uptime").innerHTML = json.uptime;
 
     document.getElementById("users-connections").innerHTML = json.connections;

@@ -28,7 +28,7 @@ module.exports = function (base, _config = {}) {
           connections: Object.keys(base.clients.all()).length,
           users: Object.entries(base.users.all()).map(([id, user]) => {
             let copy = config.parseUser(Object.assign({}, user));
-            
+
             copy.connections = Object.entries(user.connections).map(([id, connection]) => {
               return config.parseConnection(Object.assign({}, connection));
             });
@@ -50,18 +50,4 @@ module.exports = function (base, _config = {}) {
 
 function sendFile(file, res) {
   res.send(fs.readFileSync(__dirname + "/src/client/" + file.replace("/", "")).toString());
-}
-
-function cleanHiddenProperties(object, copy = true) {
-  if (copy) {
-    object = Object.assign({}, object);
-  }
-
-  for (var key in object) {
-    if (key[0] === "_") {
-      delete(object[key]);
-    }
-  }
-
-  return object;
 }
