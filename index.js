@@ -49,5 +49,5 @@ module.exports = function (base, _config = {}) {
 }
 
 function sendFile(file, res) {
-  res.send(fs.readFileSync(__dirname + "/src/client/" + file.replace("/", "")).toString());
+  res.send(fs.readFileSync(__dirname + "/src/client/" + file.replace(/\//g, "")).toString());
 }
